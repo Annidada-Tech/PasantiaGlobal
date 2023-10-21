@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="/style-index.css">
     <link rel="stylesheet" href="/css/login-modal.css">
     <link rel="stylesheet" href="/css/admin-gral.css">
+    <script src="../tinymce/tinymce.min.js" referrerpolicy="origin"></script>
     <!--Bootstrap 5.3.2-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <!--Toastify-->
@@ -79,12 +80,22 @@
                 <!--Titulo de bienvenida-->
                 <h4>Bienvenidos a la App Inter Áreas de Global Solutions</h4>
                 <!--Alguna Descripción-->
-                <p class="text-body-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo ab cupiditate necessitatibus dolores, et voluptatem numquam, voluptates, aperiam eligendi provident cumque cum quisquam.</p>
+                <p class="text-body-secondary">
+                  <br>
+                  <b>Área de creación de contenidos para el administrador. Instrucciones básicas de uso </b>
+                  <br>1- Utilice el generador de imágenes y obtenga el link de la misma
+                  <br>2- En el editor de texto, incruste la imagen con el botón <b>INSERT/EDIT IMAGE</b> 
+                  <br>3- Escriba el texto que desee acompañar a la imagen 
+                  <br>4- Obtenga el código de la publicación con el botón <b>SOURCE CODE</b> del menú view
+                  <br>5- Seleccione el Área en que desea publicar el contenido que acaba de crear
+                  <br>6- Pegue el código en el editor de contenido y envíe
+                </p>
             </div>
             <!--Barra horizontal de navegación-->
             <div class="col-sm-2 offset-md-3 py-3">
                 <h4>Menú</h4>
                 <ul class="list-unstyled">
+                  <li><a href="/index.html" class="text-white text-decoration-none">Principal</a></li>
                 <li><a href="/view/beneficios.html" class="text-white text-decoration-none">Beneficios</a></li>
                 <li><a href="/view/novedades.html" class="text-white text-decoration-none">Novedades</a></li>
                 <li><a href="/view/politicas.html" class="text-white text-decoration-none">Políticas</a></li>
@@ -170,14 +181,29 @@
     <main>
         <!--Carrusel Anuncios Importantes-->
         <h1 class="d-flex justify-content-center mt-2 ">Administrador</h1>
-        <section class="anuncio py-3 text-center container d-flex justify-content-center" >
-        
-        <div class="album py-5 bg-body-tertiary">
+        <h2 class="d-flex justify-content-center mt-2" >Editor de contenido de anuncios</h2>
+
+        <!-- <div class="album py-5 bg-body-tertiary">
             <div class="container">
                 
             </div>
-        </div>            
-        
+        </div>             -->
+        <div class="album py-5 bg-body-tertiary">
+          <div class="container">
+              <div class="row d-flex justify-content-center">
+                  <div class="col-sm-8 col-md-10 g-12">
+                      <for id="formulario" class="formulario">
+                  <textarea id="editor" name="editor"></textarea>
+                  <h4 class="d-flex justify-content-center mt-2" >Seleccione Área de publicación</h4>
+                  <div class="btn-group" role="group"">
+                    <button type="submit" class="btn btn-outline-primary" id="enviar">Beneficios</button>
+                    <button type="submit" class="btn btn-outline-success" id="enviar">Novedades</button>
+                    <button type="submit" class="btn btn-outline-info" id="enviar">Políticas</button>
+                    <button type="submit" class="btn btn-outline-secondary" id="enviar">Capacitaciones</button>
+                </form>
+                  </div>
+              </div>
+          </div>
     </main>
         
     <footer class="site-info" aria-label="Sitio"  itemtype="https://schema.org/WPFooter" itemscope>
@@ -186,6 +212,7 @@
                 <span class="copyright">&copy; 2023 Pasantias UTN en GSolutions</span> &bull; Creado con Html5, Css3, JavaScript</div>
             </div>
         </footer>
+        <script src="../js/editor.js"></script>
         <script src="/js/adminGral.js"></script>
         <script src="/js/mostrarContenido.js"></script>
         <!--Bootstrap 5.3.2-->

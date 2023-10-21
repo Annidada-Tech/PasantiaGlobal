@@ -98,6 +98,25 @@
   .card-text img{
     object-fit: contain;
   }
+  .textomotivador{
+    padding-top: 1rem;
+    display: flex;
+    font-size: medium;
+    color: #ffffff;
+    /* background-color: beige; */
+    width: 80vh;
+    text-align: justify;
+    margin: 0 auto;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
+
+  }
+  /* .imagenportada
+  {
+    display: flex;
+    width: 20%
+  } */
+
   /* @media (min-width: 1200px){
     .container{
         max-width: 900px;

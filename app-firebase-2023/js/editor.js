@@ -84,7 +84,7 @@ tinymce.init({
 tinymce.init({
   selector: '#editor',
   width: 1000,
-  height: 400,
+  height: 380,
   plugins: [
     'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
     'searchreplace', 'wordcount', 'visualblocks', 'visualchars', 'code', 'fullscreen', 'insertdatetime',
