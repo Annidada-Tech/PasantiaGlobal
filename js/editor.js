@@ -83,7 +83,7 @@ tinymce.init({
 /** */
 tinymce.init({
   selector: '#editor',
-  width: 1000,
+  width: 1077,
   height: 380,
   plugins: [
     'advlist', 'autolink', 'link', 'image', 'lists', 'charmap', 'preview', 'anchor', 'pagebreak',
@@ -139,7 +139,7 @@ tinymce.init({
     
   });
 */
-
+/*
 //Mandando el contenido del editor de texto a las paginas de contenido de anuncios
 const formulario = document.getElementById('formulario');
 formulario.addEventListener('submit', (e) => {
@@ -157,3 +157,4 @@ document.getElementById('enviar').addEventListener('click', function () {
   //window.location.href = './index.html'; // Redirige a la página de destino
   console.log(contenido + ' ' + 'Se ha enviado el contenido del editor de texto');
 });
+*/

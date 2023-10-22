@@ -1,4 +1,4 @@
-
+/*
 document.addEventListener('DOMContentLoaded', function () {
     var contenido = localStorage.getItem('contenidoTinyMCE');
     console.log(contenido);
@@ -22,3 +22,4 @@ document.addEventListener('DOMContentLoaded', function () {
         ;
     }
 });
+*/

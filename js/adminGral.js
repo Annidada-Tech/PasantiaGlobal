@@ -1,3 +1,4 @@
+import { crearRegistroBeneficios } from './firebase.js';
 /**
  * PAGINA WEB ADMINISTRADOR GENERAL:
  * En esta pagina se pretende que el administrador general pueda:
@@ -13,7 +14,7 @@
  */
 
 //Boton del login que redirige al adminGeneral.js
-const btnVolver = document.getElementById('volver');
+const Volver = document.getElementById('volver');
 btnVolver.addEventListener('click', () => {
     window.location.href = '/index.html';
 });
@@ -21,4 +22,25 @@ btnVolver.addEventListener('click', () => {
 const btnEditorContenido = document.getElementById('editor-page');
 btnEditorContenido.addEventListener('click', () => {
     window.location.href = '/view/editor.html';
+});
+
+
+//Guardando contenido del editor en la base de datos
+const btnGuardar = document.getElementById('guardar');
+btnGuardar.addEventListener('click', (e) => {
+    e.preventDefault();
+    console.log('Guardando contenido...');
+  /*  // Obtener los valores del formulario
+  var titulo = document.getElementById('titulo-publicacion').value;
+  var categoria = document.getElementById('categoria-publicacion').value;
+  var contenido = document.getElementById('formulario-publicacion').value;
+
+  // Llamar a la función para guardar el registro en Firebase
+  crearRegistroBeneficios(titulo, categoria, contenido);
+
+  // Limpiar el formulario después de guardar
+  document.getElementById('titulo-publicacion').value = '';
+  document.getElementById('categoria-publicacion').value = '';
+  document.getElementById('formulario-publicacion').value = '';
+  */
 });

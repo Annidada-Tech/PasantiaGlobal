@@ -111,6 +111,19 @@
     font-family: 'Montserrat', sans-serif;
 
   }
+  .box{
+    color: black;
+    font-weight: bold;
+    flex-direction: column;
+    width: 100%;
+    background-color: #d3cdcd;
+    padding: 2rem;
+    border-radius: .5rem;
+    box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2);
+  }
+  #formulario-publicacion{
+    height: 10rem;
+  }
   /* .imagenportada
   {
     display: flex;
