@@ -1,4 +1,5 @@
 import { crearRegistroBeneficios } from './firebase.js';
+import { alerta } from './alerta.js';
 /**
  * PAGINA WEB ADMINISTRADOR GENERAL:
  * En esta pagina se pretende que el administrador general pueda:
@@ -26,21 +27,29 @@ btnEditorContenido.addEventListener('click', () => {
 
 
 //Guardando contenido del editor en la base de datos
-const btnGuardar = document.getElementById('guardar');
+const btnGuardar = document.getElementById('guardar-bd');
 btnGuardar.addEventListener('click', (e) => {
     e.preventDefault();
-    console.log('Guardando contenido...');
-  /*  // Obtener los valores del formulario
+  console.log('Guardando contenido...');
+  // Obtener los valores del formulario
   var titulo = document.getElementById('titulo-publicacion').value;
   var categoria = document.getElementById('categoria-publicacion').value;
   var contenido = document.getElementById('formulario-publicacion').value;
+  var imagen = document.getElementById('imagen-url').value;  
+  //manejando el click validando
+  if(titulo == "" || categoria == "" || contenido == "" || imagen == ""){
+    alerta("Por favor, complete todos los campos", "danger");
+  }else{
+  }
+
 
   // Llamar a la función para guardar el registro en Firebase
-  crearRegistroBeneficios(titulo, categoria, contenido);
+  crearRegistroBeneficios(titulo, categoria, contenido, imagen);
 
   // Limpiar el formulario después de guardar
+  document.getElementById('imagen-url').value = '';
   document.getElementById('titulo-publicacion').value = '';
   document.getElementById('categoria-publicacion').value = '';
   document.getElementById('formulario-publicacion').value = '';
-  */
+  
 });

@@ -98,7 +98,7 @@ tinymce.init({
   },
   menubar: 'favs file edit view insert format tools table help',
   statusbar: false,
-  content_css: 'css/content.css'
+  content_css: 'dark',
 });
 /*
 tinymce.init({ 

@@ -24,3 +24,12 @@ registrar.addEventListener('click', (e) => {
     alerta('Usuario registrado correctamente');
 
 });
+
+
+//Guardando contenido del editor en la base de datos
+const btnGuardar = document.getElementById('guardar-bd');
+btnGuardar.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    alert('Guardando contenido...');
+});

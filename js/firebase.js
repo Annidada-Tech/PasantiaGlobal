@@ -35,9 +35,10 @@ export const crearRegistro = (nombre, apellido, usuario, password, rol) => {
 export const obtenerRegistros = () => getDocs(collection(db, "usuarios"));
 
 // Función que crea un registro en la base de datos de Firebase para beneficios
-export const crearRegistroBeneficios = async (titulo, categoria, contenido) => {
+export const crearRegistroBeneficios = async (titulo, categoria, contenido, imagen) => {
     try {
         const docRef = await addDoc(collection(db, "beneficios"), {
+            imagen: imagen,
             titulo: titulo,
             categoria: categoria,
             contenido: contenido
