@@ -5,18 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Dante Martínez, Andres Winckler and Bootstrap contributors">
-    <script src="./tinymce/tinymce.min.js" referrerpolicy="origin"></script>
-    <title>Editor Inter Areas </title>
+    <title>Inter Areas Beneficios</title>
+    <!--Favicon-->
+    <link rel="icon" type="image/x-icon" href="/Assets/fav-icon-gs.ico">
     <!--Favicon-->
     <!--<link rel="icon" type="image/png" href="/favicon.png">-->
-    <!--Fuente Noto Sans-->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@300;400;600;800&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="/style-index.css">
-    <link rel="stylesheet" href="/css/editor.css">
+    <link rel="stylesheet" href="/css/anuncios.css">
     <!--Bootstrap 5.3.2-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!--Toastify-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
 </head>
 <body>
 
@@ -74,97 +73,58 @@
       </div>
     <!--Cabecera-->  
     <header data-bs-theme="dark">
-        <div class="collapse text-bg-dark" id="navbarHeader">
-        <div class="container">
-            <div class="row">
-            <div class="col-sm-10 col-md-7 py-3">
-                <h4>Bienvenidos a la App Inter Áreas de Global Solutions</h4>
-                <p class="text-body-secondary">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo ab cupiditate necessitatibus dolores, et voluptatem numquam, voluptates, aperiam eligendi provident cumque cum quisquam vero perferendis repellat minus nisi. Consequuntur, at.</p>
-            </div>
-            <div class="col-sm-2 offset-md-3 py-3">
-                <h4>Menú</h4>
-                <ul class="list-unstyled">
-                <li><a href="#" class="text-white text-decoration-none">Beneficios</a></li>
-                <li><a href="#" class="text-white text-decoration-none">Novedades</a></li>
-                <li><a href="#" class="text-white text-decoration-none">Políticas</a></li>
-                <li><a href="#" class="text-white text-decoration-none">Capacitaciones</a></li>
-                </ul>
-            </div>
-            </div>
-        </div>
-        </div>
-        <div class="navbar navbar-dark bg-dark shadow-sm">
-        <div class="container">
-            <!-- <a href="#" class="navbar-brand d-flex align-items-center">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-door-open" viewBox="0 0 16 16">
-                    <path d="M8.5 10c-.276 0-.5-.448-.5-1s.224-1 .5-1 .5.448.5 1-.224 1-.5 1z"/>
-                    <path d="M10.828.122A.5.5 0 0 1 11 .5V1h.5A1.5 1.5 0 0 1 13 2.5V15h1.5a.5.5 0 0 1 0 1h-13a.5.5 0 0 1 0-1H3V1.5a.5.5 0 0 1 .43-.495l7-1a.5.5 0 0 1 .398.117zM11.5 2H11v13h1V2.5a.5.5 0 0 0-.5-.5zM4 1.934V15h6V1.077l-6 .857z"/>
-                  </svg>
-            <strong>Login</strong>
-            </a> -->
-            <!-- <button type="button" class="btn btn-dark" data-bs-toggle="modal" data-bs-target="#ModalForm">
-                Login
-            </button> -->
-            <!--Modal Login-->
-            <div class="modal fade" id="ModalForm" tabindex="-1" aria-labelledby="ModalFormLabel" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered">
-                  <div class="modal-content">
-                    <div class="modal-body">
-                        <button type="button" class="btn-close btn-close-white " data-bs-dismiss="modal" aria-label="Close"></button>
-                        <div class="myform bg-dark">
-                            <h1 class="text-center">Hola Admin</h1>
-                            <form>
-                                <div class="mb-3 mt-4">
-                                    <label for="exampleInputEmail1" class="form-label">Correo electronico</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                                </div>
-                                <div class="mb-3">
-                                    <label for="exampleInputPassword1" class="form-label">Password</label>
-                                    <input type="password" class="form-control" id="exampleInputPassword1">
-                                </div>
-                                <button type="submit" class="btn btn-Light mt-3">LOGIN</button>
-                                <!-- <p>Not a member? <a href="#">Signup now</a></p> -->
-                            </form>
-                        </div>
-                    </div>
-                  </div>
-                </div>
-            </div>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarHeader" aria-controls="navbarHeader" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-            </button>
-        </div>
-        </div>
+      <!--Barra Navegacion-->
+        <nav class="navbar bg-dark">
+          <div class="container justify-content-end mb-2 mt-1 py-2">
+              <a href="/index.html"><button class="btn btn-outline-secondary me-2" type="button">Inicio</button></a>
+              <a href="/view/novedades.html"><button class="btn btn-sm btn-secondary me-2" type="button">Novedades</button></a>
+              <a href="/view/politicas.html"><button class="btn btn-sm btn-secondary me-2" type="button">Politicas</button></a>
+              <a href="/view/capacitacion.html"><button class="btn btn-sm btn-secondary me-2" type="button">Capacitaciones</button></a>
+          </div>
+        </nav>
     </header>
-    
-    <main>
-    <!--Editor de contenido con registro de usuario y roles-->
-            <div class="hero">
-				<h1>Inter Areas - RR-HH</h1>
-				<p>Editor de contenido de anuncios</p>
-			</div>
-        <div class="album py-5 bg-body-tertiary">
-        <div class="container">
-            <div class="row d-flex justify-content-center">
-                <div class="col-sm-8 col-md-10 g-12">
-                    <form id="formulario" class="formulario">
-				        <textarea id="editor" name="editor"></textarea>
-				        <button type="submit" class="btn btn-success" id="enviar">Enviar</button>
-			        </form>
-                </div>
+    <!--Seccion principal donde se coloca el anuncio-->
+    <main>       
+        <div class="container mt-3" id="contenedor-beneficios">    
+            <div class="row">
+                <div class="card d-flex" id="contenidoAqui"></div>
             </div>
-        </div>
+                <!-- <div class="container">
+                    <div class="megusta">
+                        <small1>👍</small>
+                    </div>    
+                </div>  -->
+            </div>
+        </div>           
     </main>
+    <!--Paginacion-->
+    <section>
+      <nav aria-label="Page navigation example">
+        <ul class="pagination justify-content-center mt-3">
+          <li class="page-item disabled">
+            <a class="page-link">Previous</a>
+          </li>
+          <li class="page-item"><a class="page-link" href="#">1</a></li>
+          <li class="page-item"><a class="page-link" href="#">2</a></li>
+          <li class="page-item"><a class="page-link" href="#">3</a></li>
+          <li class="page-item">
+            <a class="page-link" href="#">Next</a>
+          </li>
+        </ul>
+      </nav>
+    </section>
     
-    <footer class="site-info" aria-label="Sitio"  itemtype="https://schema.org/WPFooter" itemscope>
-        <div class="inside-site-info grid-container">
-                            <div class="copyright-bar">
-                <span class="copyright">&copy; 2023 Pasantias UTN en GSolutions</span> &bull; Creado con Html5, Css3, JavaScript</div>
+    <footer class="site-info border border-secondary rounded border-4 py-5 bg-dark" aria-label="Sitio"  itemtype="https://schema.org/WPFooter" itemscope>
+        <div class="d-flex justify-content-center">
+          <span class="copyright">&copy; 2023 Pasantias UTN en GSolutions &bull; Creado con Html5, Css3, JavaScript</span>
         </div>
     </footer>
-    <script src="./js/editor.js"></script>
+    
     <!--Bootstrap 5.3.2-->
+    <script src="/js/mostrarContenido.js"></script>
     <script src="/js/theme.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <!--Toastify-->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 </html>

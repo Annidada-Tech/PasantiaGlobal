@@ -1,3 +1,6 @@
+.body{
+  font-family: 'Montserrat', sans-serif;
+}
 .bd-placeholder-img {
     font-size: 1.125rem;
     text-anchor: middle;
@@ -81,9 +84,41 @@
     margin-bottom: 0; /* ¿por qué, carousel, por qué? */
     
   }
-  .carousel-inner, .carousel-inner > .item, .carousel-inner > .item > img {
-    width: 100%;
-    color: black;
+  .carousel-inner, .carousel-inner > .item > img {
+    width: fit-content;
+    /* color: black; */
+    background-image: url("./Assets/red.png");
   }
+  .imagen{
+    width:fit-content;
+  }
+  .copyright{
+    color: #fff;
+  }
+  .card-text img{
+    object-fit: contain;
+  }
+  .textomotivador{
+    padding-top: 1rem;
+    display: flex;
+    font-size: medium;
+    color: #ffffff;
+    /* background-color: beige; */
+    width: 80vh;
+    text-align: justify;
+    margin: 0 auto;
+    font-weight: 600;
+    font-family: 'Montserrat', sans-serif;
 
-  
+  }
+  /* .imagenportada
+  {
+    display: flex;
+    width: 20%
+  } */
+
+  /* @media (min-width: 1200px){
+    .container{
+        max-width: 900px;
+    }
+  }     

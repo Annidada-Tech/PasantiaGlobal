@@ -1,0 +1,14 @@
+.registrar-user:hover{
+    color: rgb(4, 240, 16); 
+}
+.formulario {
+	width: 100%;
+	border-radius: 5px;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+	align-items: center;
+}
+.tox-promotion{
+	display: none !important;
+}
