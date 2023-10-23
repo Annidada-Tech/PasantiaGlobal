@@ -19,17 +19,21 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
+// Función que crea un registro en la base de datos de Firebase para usuarios
+export const crearRegistro = async (nombre, apellido, usuario, password, rol) => {
+    try {
+        const docRef = await addDoc(collection(db, "usuarios"), {
+            nombre: nombre,
+            apellido: apellido,
+            user: usuario,
+            password: password,
+            rol: rol
+        });
+        console.log("Registro creado con ID: ", docRef.id);
 
-//funcion que crea un registro en la base de datos de firebase
-export const crearRegistro = (nombre, apellido, usuario, password, rol) => {
-    //console.log(nombre, apellido, email, password, rol);
-    addDoc(collection(db, "usuarios"), {
-        nombre: nombre,
-        apellido: apellido,
-        user: usuario,
-        password: password,
-        rol: rol
-    })
+    } catch (error) {
+        console.error("Error al crear el registro: ", error);
+    }
 }
 
 export const obtenerRegistros = () => getDocs(collection(db, "usuarios"));
@@ -49,3 +53,5 @@ export const crearRegistroBeneficios = async (titulo, categoria, contenido, imag
         console.error("Error al crear el registro de beneficio: ", error);
     }
 }
+//funcion que obtiene los registros de beneficios
+export const obtenerRegistrosBeneficios = () => getDocs(collection(db, "beneficios"));

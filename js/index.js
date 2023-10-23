@@ -11,6 +11,7 @@ window.addEventListener('DOMContentLoaded', () => {
 
 const registrar = document.getElementById('registrar-usuario');
 registrar.addEventListener('click', (e) => {
+    e.preventDefault();
     
     const nombre = document.getElementById('nombre-user').value;
     const apellido = document.getElementById('apellido-user').value;
@@ -19,6 +20,7 @@ registrar.addEventListener('click', (e) => {
     const rol = document.getElementById('rol-user').value;
 
     //console.log(nombre, apellido, usuario, password, rol);
+
     crearRegistro(nombre, apellido, usuario, password, rol);
     bootstrap.Modal.getInstance(document.getElementById('ModalForm')).hide();
     alerta('Usuario registrado correctamente');
@@ -26,10 +28,4 @@ registrar.addEventListener('click', (e) => {
 });
 
 
-//Guardando contenido del editor en la base de datos
-const btnGuardar = document.getElementById('guardar-bd');
-btnGuardar.addEventListener('submit', (e) => {
-    e.preventDefault();
 
-    alert('Guardando contenido...');
-});
