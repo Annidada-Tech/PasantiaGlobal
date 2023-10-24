@@ -20,18 +20,19 @@ entrar.addEventListener('click', async(e) => {
         console.log(registros);
         
         if(usuario === registros.user && password === registros.password && registros.rol === 'admin'){
-            alerta('Bienvenido');
+            
             //console.log('bienvenido');
             //almaceno el rol del usuario en el localstorage
             localStorage.setItem('rol', registros.rol);
             window.location.href = "/view/adminGeneral.html";
-
-        }else if(usuario === registros.user && password === registros.password && registros.rol === 'editor'){
             alerta('Bienvenido');
+        }else if(usuario === registros.user && password === registros.password && registros.rol === 'editor'){
+            
             //console.log('bienvenido');
             //almaceno el rol del usuario en el localstorage
             localStorage.setItem('rol', registros.rol);
             window.location.href = "/view/editor.html";
+            alerta('Bienvenido');
         }else{
             alerta('Usuario o contraseña incorrectos');
             //console.log('usuario o contraseña incorrectos');

@@ -30,7 +30,6 @@ export const crearRegistro = async (nombre, apellido, usuario, password, rol) =>
             rol: rol
         });
         console.log("Registro creado con ID: ", docRef.id);
-
     } catch (error) {
         console.error("Error al crear el registro: ", error);
     }
@@ -41,13 +40,16 @@ export const obtenerRegistros = () => getDocs(collection(db, "usuarios"));
 // Función que crea un registro en la base de datos de Firebase para beneficios
 export const crearRegistroBeneficios = async (titulo, categoria, contenido, imagen) => {
     try {
+        const timestamp = new Date(); // Obtiene la fecha y hora actual
         const docRef = await addDoc(collection(db, "beneficios"), {
+            timestamp: timestamp,
             imagen: imagen,
             titulo: titulo,
             categoria: categoria,
             contenido: contenido
         });
         console.log("Registro de beneficio creado con ID: ", docRef.id);
+        
         // Puedes realizar otras acciones después de guardar, si es necesario
     } catch (error) {
         console.error("Error al crear el registro de beneficio: ", error);

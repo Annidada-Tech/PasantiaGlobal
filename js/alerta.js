@@ -1,7 +1,7 @@
 export function alerta(message, type = "success") {
   Toastify({
     text: message,
-    duration: 2000,
+    duration: 3000,
     destination: "",
     newWindow: true,
     close: true,
