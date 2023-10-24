@@ -17,6 +17,16 @@ import { alerta } from './alerta.js';
  *      3.6. Crear nuevos novedades
  */
 
+const botonPaginaEditor = document.getElementById('editor-page');
+botonPaginaEditor.addEventListener('click', () => {
+  window.location.href = '/view/editor.html';
+});
+
+const botonIndex = document.getElementById('volver');
+botonIndex.addEventListener('click', () => {
+  window.location.href = '/index.html';
+});
+
 //Guardando contenido de Beneficios en la base de datos----------------------
 const btnGuardarBeneficios = document.getElementById('publicar-beneficio');
 btnGuardarBeneficios.addEventListener('click', (e) => {
