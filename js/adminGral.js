@@ -1,4 +1,7 @@
-import { crearRegistroBeneficios, crearRegistroNovedades, crearRegistroPoliticas} from './firebase.js';
+import { crearRegistroBeneficios,
+         crearRegistroNovedades,
+         crearRegistroPoliticas,
+         crearRegistroCapacitacion} from './firebase.js';
 import { alerta } from './alerta.js';
 /**
  * PAGINA WEB ADMINISTRADOR GENERAL:
@@ -98,6 +101,36 @@ btnGuardarPoliticas.addEventListener('click', (e) => {
     
   // Llamar a la función para guardar el registro en Firebase
   crearRegistroPoliticas(titulo, categoria, contenido, imagen);
+  alert("Se ha guardado correctamente")
+  // Limpiar el formulario después de guardar
+  document.getElementById('imagen-url').value = '';
+  document.getElementById('titulo-publicacion').value = '';
+  document.getElementById('categoria-publicacion').value = '';
+  document.getElementById('formulario-publicacion').value = '';
+  }  
+});
+
+//Guardando contenido de capacitaciones en la base de datos----------------------
+const btnGuardarCapacitacion = document.getElementById('publicar-capacitaciones');
+btnGuardarCapacitacion.addEventListener('click', (e) => {
+    e.preventDefault();
+  
+  // Obtener los valores del formulario
+  var titulo = document.getElementById('titulo-publicacion').value;
+  var categoria = document.getElementById('categoria-publicacion').value;
+  var contenido = document.getElementById('formulario-publicacion').value;
+  var imagen = document.getElementById('imagen-url').value;  
+  console.log(titulo, categoria, contenido, imagen);
+  //manejando el click validando
+  if(titulo == "" || categoria == "" || contenido == "" || imagen == ""){
+    
+    return alerta("Por favor, complete todos los campos", "danger");
+  }else{
+    
+    //posible switch para las categorias
+    
+  // Llamar a la función para guardar el registro en Firebase
+  crearRegistroCapacitacion(titulo, categoria, contenido, imagen);
   alert("Se ha guardado correctamente")
   // Limpiar el formulario después de guardar
   document.getElementById('imagen-url').value = '';

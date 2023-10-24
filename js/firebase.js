@@ -99,3 +99,24 @@ export const crearRegistroPoliticas = async (titulo, categoria, contenido, image
 }
 //funcion que obtiene los registros de novedades
 export const obtenerRegistrosPoliticas = () => getDocs(collection(db, "politicas"));
+
+// Función que crea un registro en la base de datos de Firebase para capacitaciones
+export const crearRegistroCapacitacion = async (titulo, categoria, contenido, imagen) => {
+    try {
+        const timestamp = new Date(); // Obtiene la fecha y hora actual
+        const docRef = await addDoc(collection(db, "capacitaciones"), {
+            timestamp: timestamp,
+            imagen: imagen,
+            titulo: titulo,
+            categoria: categoria,
+            contenido: contenido
+        });
+        console.log("Registro de beneficio creado con ID: ", docRef.id);
+        
+        // Puedes realizar otras acciones después de guardar, si es necesario
+    } catch (error) {
+        console.error("Error al crear el registro de beneficio: ", error);
+    }
+}
+//funcion que obtiene los registros de capacitaciones
+export const obtenerRegistrosCapacitaciones = () => getDocs(collection(db, "capacitaciones"));
