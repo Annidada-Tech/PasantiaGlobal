@@ -57,3 +57,45 @@ export const crearRegistroBeneficios = async (titulo, categoria, contenido, imag
 }
 //funcion que obtiene los registros de beneficios
 export const obtenerRegistrosBeneficios = () => getDocs(collection(db, "beneficios"));
+
+// Función que crea un registro en la base de datos de Firebase para novedades
+export const crearRegistroNovedades = async (titulo, categoria, contenido, imagen) => {
+    try {
+        const timestamp = new Date(); // Obtiene la fecha y hora actual
+        const docRef = await addDoc(collection(db, "novedades"), {
+            timestamp: timestamp,
+            imagen: imagen,
+            titulo: titulo,
+            categoria: categoria,
+            contenido: contenido
+        });
+        console.log("Registro de beneficio creado con ID: ", docRef.id);
+        
+        // Puedes realizar otras acciones después de guardar, si es necesario
+    } catch (error) {
+        console.error("Error al crear el registro de beneficio: ", error);
+    }
+}
+//funcion que obtiene los registros de novedades
+export const obtenerRegistrosNovedades = () => getDocs(collection(db, "novedades"));
+
+// Función que crea un registro en la base de datos de Firebase para politicas
+export const crearRegistroPoliticas = async (titulo, categoria, contenido, imagen) => {
+    try {
+        const timestamp = new Date(); // Obtiene la fecha y hora actual
+        const docRef = await addDoc(collection(db, "politicas"), {
+            timestamp: timestamp,
+            imagen: imagen,
+            titulo: titulo,
+            categoria: categoria,
+            contenido: contenido
+        });
+        console.log("Registro de beneficio creado con ID: ", docRef.id);
+        
+        // Puedes realizar otras acciones después de guardar, si es necesario
+    } catch (error) {
+        console.error("Error al crear el registro de beneficio: ", error);
+    }
+}
+//funcion que obtiene los registros de novedades
+export const obtenerRegistrosPoliticas = () => getDocs(collection(db, "politicas"));
