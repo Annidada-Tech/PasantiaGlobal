@@ -1,3 +1,5 @@
+import { crearRegistroCapacitacion } from './firebase.js';
+import { alerta } from './alerta.js';
 const btnVolver = document.getElementById('volver');
 btnVolver.addEventListener('click', () => {
   if (localStorage.getItem('rol') === 'admin') {
@@ -5,6 +7,36 @@ btnVolver.addEventListener('click', () => {
   } else if (localStorage.getItem('rol') === 'editor') {
     window.location.href = '/index.html';
   }
+});
+
+//Guardando contenido de capacitaciones en la base de datos----------------------
+const btnGuardarCapacitacionEditor = document.getElementById('publicar-capacitaciones-editor');
+btnGuardarCapacitacionEditor.addEventListener('click', (e) => {
+    e.preventDefault();
+  
+  // Obtener los valores del formulario
+  var titulo = document.getElementById('titulo-publicacion').value;
+  var categoria = document.getElementById('categoria-publicacion').value;
+  var contenido = document.getElementById('formulario-publicacion').value;
+  var imagen = document.getElementById('imagen-url').value;  
+  console.log(titulo, categoria, contenido, imagen);
+  //manejando el click validando
+  if(titulo == "" || categoria == "" || contenido == "" || imagen == ""){
+    
+    return alerta("Por favor, complete todos los campos", "danger");
+  }else{
+    
+    //posible switch para las categorias
+    
+  // Llamar a la función para guardar el registro en Firebase
+  crearRegistroCapacitacion(titulo, categoria, contenido, imagen);
+  alert("Se ha guardado correctamente")
+  // Limpiar el formulario después de guardar
+  document.getElementById('imagen-url').value = '';
+  document.getElementById('titulo-publicacion').value = '';
+  document.getElementById('categoria-publicacion').value = '';
+  document.getElementById('formulario-publicacion').value = '';
+  }  
 });
 
 
