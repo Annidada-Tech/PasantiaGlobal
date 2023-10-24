@@ -142,22 +142,45 @@
     
     <main>
     <!--Editor de contenido con registro de usuario y roles-->
-            <div class="hero">
+      <div class="hero">
 				<h1>Inter Areas - RR-HH</h1>
 				<p>Editor de contenido de anuncios</p>
-			</div>
-        <div class="album py-5 bg-body-tertiary">
-        <div class="container">
-            <div class="row d-flex justify-content-center">
+        <a href="https://app-storage-annidada.web.app/">
+          <button type="submit" class="btn btn-warning mb-3" id="">Obtener Link Imagen</button></a>
+			</div>                   
+          <div class="album py-5 bg-body-tertiary">
+            <div class="container">
+              <div class="row d-flex justify-content-center">
                 <div class="col-sm-8 col-md-10 g-12">
-                    <form id="formulario" class="formulario">
-				        <!-- <textarea id="editor" name="editor"></textarea> -->
-				        <button type="submit" class="btn btn-success" id="enviar">Enviar</button>
-			        </form>
+                  <form id="formulario" class="formulario">
+                    <!-- <textarea id="editor" name="editor"></textarea> -->
+                      <div class="box d-flex justify-content-center">
+                        <label for="imagen-url">Imagen url:</label>
+                        <input id="imagen-url" required></input>
+                        <label for="titulo-publicacion">Titulo</label>
+                        <input id="titulo-publicacion" required></input>
+                        <label for="categoria-publicacion">Categoria:</label>
+                        <input id="categoria-publicacion" required></input>
+                        <label for="formulario-publicacion">Contenido:</label>
+                        <textarea id="formulario-publicacion" required></textarea>
+  
+                    </div>
+                  </form>
+                  <div class="box-sub d-flex justify-content-center">
+                    <!-- <button type="submit" class="btn btn-warning" id="guardar-bd">Guardar</button> -->
+                  </div>
+                  
+                  <h4 class="d-flex justify-content-center mt-2">Publicar</h4>
+                  <div class="box-sub d-flex justify-content-center">
+                    <button type="submit" class="btn btn-outline-primary" id="publicar-capacitaciones">Capacitaciones</button>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
-    </main>
+        
+      </main>  
     
     <footer class="site-info" aria-label="Sitio"  itemtype="https://schema.org/WPFooter" itemscope>
         <div class="inside-site-info grid-container">
