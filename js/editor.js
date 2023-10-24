@@ -80,7 +80,7 @@ tinymce.init({
 
     toolbar: 'undo redo | styleselect | bold italic | alignleft aligncenter alignright alignjustify | outdent indent | image',
 });
-/** */
+
 tinymce.init({
   selector: '#editor',
   width: 1077,
