@@ -89,15 +89,19 @@
     /* color: black; */
     background-image: url("./Assets/red.png");
   }
+  /*
   .imagen{
     width:fit-content;
   }
+  */
   .copyright{
     color: #fff;
   }
+  /*
   .card-text img{
     object-fit: contain;
   }
+  */
   .textomotivador{
     padding-top: 1rem;
     display: flex;
@@ -140,14 +144,42 @@
     line-height: 2.2rem;
   }
 
-  /* .imagenportada
-  {
+  .card {
+    
+    border: 1px solid #ddd;
+    width: 100%; 
     display: flex;
-    width: 20%
-  } */
+    flex-direction: column; 
+    margin: 10px;
+    padding: 10px;
+}
 
-  /* @media (min-width: 1200px){
-    .container{
-        max-width: 900px;
-    }
-  }     
+.card img {
+  max-width: 100%;
+  height: 433px;
+  object-fit: contain;
+  margin: 0 auto; /* Centra la imagen horizontalmente */
+  display: block; /* Asegura que el margen horizontal funcione correctamente */
+}
+.card .card-body {
+  padding: 10px;
+  overflow: hidden;
+}
+
+.card-text {
+  margin-bottom: .5rem;
+  padding: .5rem;
+  width: 100%;
+  height: 133px; /* Establece una altura máxima */
+  overflow-y: auto; /* Agrega una barra de desplazamiento vertical cuando sea necesario */
+}
+
+/*Configuracion para celular*/
+@media (max-width: 768px) {
+  .card img {
+    /* Estilos específicos para dispositivos móviles */
+    height: auto; /* Cambia la altura a "auto" para mantener la relación de aspecto */
+    max-height: 300px; /* Establece una altura máxima */
+    object-fit: contain;
+  }
+}

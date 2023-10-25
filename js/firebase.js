@@ -38,13 +38,14 @@ export const crearRegistro = async (nombre, apellido, usuario, password, rol) =>
 export const obtenerRegistros = () => getDocs(collection(db, "usuarios"));
 
 // Función que crea un registro en la base de datos de Firebase para beneficios
-export const crearRegistroBeneficios = async (titulo, categoria, contenido, imagen) => {
+export const crearRegistroBeneficios = async (titulo, resumen, categoria, contenido, imagen) => {
     try {
         const timestamp = new Date(); // Obtiene la fecha y hora actual
         const docRef = await addDoc(collection(db, "beneficios"), {
             timestamp: timestamp,
             imagen: imagen,
             titulo: titulo,
+            resumen: resumen,
             categoria: categoria,
             contenido: contenido
         });
@@ -59,13 +60,14 @@ export const crearRegistroBeneficios = async (titulo, categoria, contenido, imag
 export const obtenerRegistrosBeneficios = () => getDocs(collection(db, "beneficios"));
 
 // Función que crea un registro en la base de datos de Firebase para novedades
-export const crearRegistroNovedades = async (titulo, categoria, contenido, imagen) => {
+export const crearRegistroNovedades = async (titulo, resumen, categoria, contenido, imagen) => {
     try {
         const timestamp = new Date(); // Obtiene la fecha y hora actual
         const docRef = await addDoc(collection(db, "novedades"), {
             timestamp: timestamp,
             imagen: imagen,
             titulo: titulo,
+            resumen: resumen,
             categoria: categoria,
             contenido: contenido
         });
@@ -80,13 +82,14 @@ export const crearRegistroNovedades = async (titulo, categoria, contenido, image
 export const obtenerRegistrosNovedades = () => getDocs(collection(db, "novedades"));
 
 // Función que crea un registro en la base de datos de Firebase para politicas
-export const crearRegistroPoliticas = async (titulo, categoria, contenido, imagen) => {
+export const crearRegistroPoliticas = async (titulo, resumen, categoria, contenido, imagen) => {
     try {
         const timestamp = new Date(); // Obtiene la fecha y hora actual
         const docRef = await addDoc(collection(db, "politicas"), {
             timestamp: timestamp,
             imagen: imagen,
             titulo: titulo,
+            resumen: resumen,
             categoria: categoria,
             contenido: contenido
         });
@@ -101,13 +104,14 @@ export const crearRegistroPoliticas = async (titulo, categoria, contenido, image
 export const obtenerRegistrosPoliticas = () => getDocs(collection(db, "politicas"));
 
 // Función que crea un registro en la base de datos de Firebase para capacitaciones
-export const crearRegistroCapacitacion = async (titulo, categoria, contenido, imagen) => {
+export const crearRegistroCapacitacion = async (titulo, resumen, categoria, contenido, imagen) => {
     try {
         const timestamp = new Date(); // Obtiene la fecha y hora actual
         const docRef = await addDoc(collection(db, "capacitaciones"), {
             timestamp: timestamp,
             imagen: imagen,
             titulo: titulo,
+            resumen: resumen,
             categoria: categoria,
             contenido: contenido
         });

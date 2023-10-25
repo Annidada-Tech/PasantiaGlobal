@@ -34,12 +34,13 @@ btnGuardarBeneficios.addEventListener('click', (e) => {
   
   // Obtener los valores del formulario
   var titulo = document.getElementById('titulo-publicacion').value;
+  var resumen = document.getElementById('resumen-publicacion').value;
   var categoria = document.getElementById('categoria-publicacion').value;
   var contenido = document.getElementById('formulario-publicacion').value;
   var imagen = document.getElementById('imagen-url').value;  
-  console.log(titulo, categoria, contenido, imagen);
+  //console.log(titulo, resumen, categoria, contenido, imagen);
   //manejando el click validando
-  if(titulo == "" || categoria == "" || contenido == "" || imagen == ""){
+  if(titulo == "" || categoria == "" || contenido == "" || imagen == "" || resumen == ""){
     
     return alerta("Por favor, complete todos los campos", "danger");
   }else{
@@ -47,11 +48,12 @@ btnGuardarBeneficios.addEventListener('click', (e) => {
     //posible switch para las categorias
     
   // Llamar a la función para guardar el registro en Firebase
-  crearRegistroBeneficios(titulo, categoria, contenido, imagen);
+  crearRegistroBeneficios(titulo, resumen, categoria, contenido, imagen);
   alert("Se ha guardado correctamente")
   // Limpiar el formulario después de guardar
   document.getElementById('imagen-url').value = '';
   document.getElementById('titulo-publicacion').value = '';
+  document.getElementById('resumen-publicacion').value = '';
   document.getElementById('categoria-publicacion').value = '';
   document.getElementById('formulario-publicacion').value = '';
   
@@ -66,12 +68,13 @@ btnGuardarNovedades.addEventListener('click', (e) => {
   
   // Obtener los valores del formulario
   var titulo = document.getElementById('titulo-publicacion').value;
+  var resumen = document.getElementById('resumen-publicacion').value;
   var categoria = document.getElementById('categoria-publicacion').value;
   var contenido = document.getElementById('formulario-publicacion').value;
   var imagen = document.getElementById('imagen-url').value;  
-  console.log(titulo, categoria, contenido, imagen);
+  //console.log(titulo, resumen, categoria, contenido, imagen);
   //manejando el click validando
-  if(titulo == "" || categoria == "" || contenido == "" || imagen == ""){
+  if(titulo == "" || categoria == "" || contenido == "" || imagen == "" || resumen == ""){
     
     return alerta("Por favor, complete todos los campos", "danger");
   }else{
@@ -79,11 +82,12 @@ btnGuardarNovedades.addEventListener('click', (e) => {
     //posible switch para las categorias
     
   // Llamar a la función para guardar el registro en Firebase
-  crearRegistroNovedades(titulo, categoria, contenido, imagen);
+  crearRegistroNovedades(titulo, resumen, categoria, contenido, imagen);
   alert("Se ha guardado correctamente")
   // Limpiar el formulario después de guardar
   document.getElementById('imagen-url').value = '';
   document.getElementById('titulo-publicacion').value = '';
+  document.getElementById('resumen-publicacion').value = '';
   document.getElementById('categoria-publicacion').value = '';
   document.getElementById('formulario-publicacion').value = '';
   }  
@@ -97,12 +101,13 @@ btnGuardarPoliticas.addEventListener('click', (e) => {
   
   // Obtener los valores del formulario
   var titulo = document.getElementById('titulo-publicacion').value;
+  var resumen = document.getElementById('resumen-publicacion').value;
   var categoria = document.getElementById('categoria-publicacion').value;
   var contenido = document.getElementById('formulario-publicacion').value;
   var imagen = document.getElementById('imagen-url').value;  
-  console.log(titulo, categoria, contenido, imagen);
+  //console.log(titulo, resumen, categoria, contenido, imagen);
   //manejando el click validando
-  if(titulo == "" || categoria == "" || contenido == "" || imagen == ""){
+  if(titulo == "" || categoria == "" || contenido == "" || imagen == "" || resumen == ""){
     
     return alerta("Por favor, complete todos los campos", "danger");
   }else{
@@ -110,11 +115,12 @@ btnGuardarPoliticas.addEventListener('click', (e) => {
     //posible switch para las categorias
     
   // Llamar a la función para guardar el registro en Firebase
-  crearRegistroPoliticas(titulo, categoria, contenido, imagen);
+  crearRegistroPoliticas(titulo, resumen, categoria, contenido, imagen);
   alert("Se ha guardado correctamente")
   // Limpiar el formulario después de guardar
   document.getElementById('imagen-url').value = '';
   document.getElementById('titulo-publicacion').value = '';
+  document.getElementById('resumen-publicacion').value = '';
   document.getElementById('categoria-publicacion').value = '';
   document.getElementById('formulario-publicacion').value = '';
   }  
@@ -127,12 +133,13 @@ btnGuardarCapacitacion.addEventListener('click', (e) => {
   
   // Obtener los valores del formulario
   var titulo = document.getElementById('titulo-publicacion').value;
+  var resumen = document.getElementById('resumen-publicacion').value;
   var categoria = document.getElementById('categoria-publicacion').value;
   var contenido = document.getElementById('formulario-publicacion').value;
   var imagen = document.getElementById('imagen-url').value;  
-  console.log(titulo, categoria, contenido, imagen);
+  //console.log(titulo, resumen, categoria, contenido, imagen);
   //manejando el click validando
-  if(titulo == "" || categoria == "" || contenido == "" || imagen == ""){
+  if(titulo == "" || categoria == "" || contenido == "" || imagen == "" || resumen == ""){
     
     return alerta("Por favor, complete todos los campos", "danger");
   }else{
@@ -140,11 +147,12 @@ btnGuardarCapacitacion.addEventListener('click', (e) => {
     //posible switch para las categorias
     
   // Llamar a la función para guardar el registro en Firebase
-  crearRegistroCapacitacion(titulo, categoria, contenido, imagen);
+  crearRegistroCapacitacion(titulo, resumen, categoria, contenido, imagen);
   alert("Se ha guardado correctamente")
   // Limpiar el formulario después de guardar
   document.getElementById('imagen-url').value = '';
   document.getElementById('titulo-publicacion').value = '';
+  document.getElementById('resumen-publicacion').value = '';
   document.getElementById('categoria-publicacion').value = '';
   document.getElementById('formulario-publicacion').value = '';
   }  
