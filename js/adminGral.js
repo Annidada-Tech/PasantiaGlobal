@@ -139,7 +139,7 @@ btnGuardarCapacitacion.addEventListener('click', (e) => {
   document.getElementById('formulario-publicacion').value = '';
   }  
 });
-/*
+
 //Mostrar para eliminar los beneficios
 document.addEventListener('DOMContentLoaded', async (e) => {
   const tablaBeneficios = document.getElementById('tabla-beneficios');
@@ -177,7 +177,7 @@ document.addEventListener('DOMContentLoaded', async (e) => {
     });
   });
 });
-*/
+
 //Mostrar para eliminar las novedades
 document.addEventListener('DOMContentLoaded', async (e) => {
   const tablaNovedades = document.getElementById('tabla-novedades');
