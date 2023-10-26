@@ -131,11 +131,44 @@ export const crearRegistroCapacitacion = async (titulo, resumen, categoria, cont
 //funcion que obtiene los registros de capacitaciones
 export const obtenerRegistrosCapacitaciones = () => getDocs(collection(db, "capacitaciones"));
 
-//FUNCION QUE ELIMINA UN REGISTRO DE LA BASE DE DATOS por id 
+//FUNCION QUE BORRA PUBLICACIONES BENEFICIOS
 export const eliminarRegistroBeneficios = async (id) => {
     console.log("id a eliminar: ", id);
     try {
         await deleteDoc(doc(db, "beneficios", id));
+        console.log("Registro eliminado correctamente");
+    } catch (error) {
+        console.error("Error al eliminar el registro: ", error);
+    }
+}
+
+//FUNCION QUE BORRA PUBLICACIONES NOVEDADES
+export const eliminarRegistroNovedades = async (id) => {
+    console.log("id a eliminar: ", id);
+    try {
+        await deleteDoc(doc(db, "novedades", id));
+        console.log("Registro eliminado correctamente");
+    } catch (error) {
+        console.error("Error al eliminar el registro: ", error);
+    }
+}
+
+//FUNCION QUE BORRA PUBLICACIONES POLITICAS
+export const eliminarRegistroPoliticas = async (id) => {
+    console.log("id a eliminar: ", id);
+    try {
+        await deleteDoc(doc(db, "politicas", id));
+        console.log("Registro eliminado correctamente");
+    } catch (error) {
+        console.error("Error al eliminar el registro: ", error);
+    }
+}
+
+//FUNCION QUE BORRA PUBLICACIONES CAPACITACIONES
+export const eliminarRegistroCapacitaciones = async (id) => {
+    console.log("id a eliminar: ", id);
+    try {
+        await deleteDoc(doc(db, "capacitaciones", id));
         console.log("Registro eliminado correctamente");
     } catch (error) {
         console.error("Error al eliminar el registro: ", error);

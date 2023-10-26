@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             <div class="columna">
                 <div class="card shadow-sm">
                     <div class="card-image">
-                        <img src="${beneficio.imagen}" alt="${beneficio.titulo}">
+                        <img src="${beneficio.imagen}" height="433px" class="card-img-top" alt="${beneficio.titulo}">
                     </div>
                     <div class="card-body">
                     <textarea class="card-text">${beneficio.resumen}</textarea>
@@ -51,10 +51,10 @@ document.addEventListener('DOMContentLoaded', async function() {
     } catch (error) {
         console.error("Error al obtener registros de beneficios: ", error);
     }
-});
+
 
 //--------------------CARGA DE DATOS EN EL INDEX NOVEDADES---------------------------
-document.addEventListener('DOMContentLoaded', async function() {
+
     const seccionNovedadesIndex = document.querySelector('#novedades-index');
 
     try {
@@ -76,14 +76,14 @@ document.addEventListener('DOMContentLoaded', async function() {
             <div class="columna">
                 <div class="card shadow-sm">
                     <div class="card-image">
-                        <img src="${novedades.imagen}" alt="${novedades.titulo}">
+                        <img src="${novedades.imagen}" height="433px" class="card-img-top" alt="${novedades.titulo}">
                     </div>
                     <div class="card-body">
                         <textarea class="card-text">${novedades.resumen}</textarea>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <a href="/view/beneficios.html">
-                                    <button type="button" class="btn btn-sm btn-outline-secondary btn-light">Ver Página de Beneficios</button>
+                                <a href="/view/novedades.html">
+                                    <button type="button" class="btn btn-sm btn-outline-secondary btn-light">Ver Página de Novedades</button>
                                 </a>
                             </div>
                         </div>
@@ -96,10 +96,10 @@ document.addEventListener('DOMContentLoaded', async function() {
     } catch (error) {
         console.error("Error al obtener registros de novedades: ", error);
     }
-});
+
 
 //--------------------CARGA DE DATOS EN EL INDEX POLITICAS---------------------------
-document.addEventListener('DOMContentLoaded', async function() {
+
     const seccionPoliticasIndex = document.querySelector('#politicas-index');
 
     try {
@@ -120,12 +120,12 @@ document.addEventListener('DOMContentLoaded', async function() {
             const cardHtml = `
             <div class="columna">
                 <div class="card shadow-sm">
-                    <img src="${politicas.imagen}" class="card-img-top" alt="${politicas.titulo}">   
+                    <img src="${politicas.imagen}" height="433px" class="card-img-top" alt="${politicas.titulo}">   
                 <div class="card-body">
                 <textarea class="card-text">${politicas.resumen}</textarea>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <a href="/view/beneficios.html">
+                                <a href="/view/politicas.html">
                                 <button type="button" class="btn btn-sm btn-outline-secondary btn-light">Ver Pagina Políticas</button></a>
                             </div>
                         </div>
@@ -138,10 +138,10 @@ document.addEventListener('DOMContentLoaded', async function() {
     } catch (error) {
         console.error("Error al obtener registros de politicas: ", error);
     }
-});
+
 
 //--------------------CARGA DE DATOS EN EL INDEX POLITICAS---------------------------
-document.addEventListener('DOMContentLoaded', async function() {
+
     const seccionCapacitacionesIndex = document.querySelector('#capacitaciones-index');
 
     try {
@@ -161,13 +161,13 @@ document.addEventListener('DOMContentLoaded', async function() {
             //console.log(capacitaciones);
             const cardHtml = `
             <div class="columna">
-                <div class="card shadow-sm">
-                    <img src="${capacitaciones.imagen}" class="card-img-top" alt="${capacitaciones.titulo}">   
+                <div class="card ">
+                    <img src="${capacitaciones.imagen}" height="433px" class="card-img-top" alt="${capacitaciones.titulo}">   
                 <div class="card-body">
                 <textarea class="card-text">${capacitaciones.resumen}</textarea>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <a href="/view/beneficios.html">
+                                <a href="/view/capacitaciones.html">
                                 <button type="button" class="btn btn-sm btn-outline-secondary btn-light">Ver Pagina Capacitaciones</button></a>
                             </div>
                         </div>
@@ -182,26 +182,7 @@ document.addEventListener('DOMContentLoaded', async function() {
     }
 });
 
-/*
 
-const registrar = document.getElementById('registrar-usuario');
-registrar.addEventListener('click', (e) => {
-    e.preventDefault();
-    
-    const nombre = document.getElementById('nombre-user').value;
-    const apellido = document.getElementById('apellido-user').value;
-    const usuario= document.getElementById('usuario-user').value;
-    const password = document.getElementById('password-user').value;
-    const rol = document.getElementById('rol-user').value;
-
-    //console.log(nombre, apellido, usuario, password, rol);
-
-    crearRegistro(nombre, apellido, usuario, password, rol);
-    bootstrap.Modal.getInstance(document.getElementById('ModalForm')).hide();
-    alerta('Usuario registrado correctamente');
-
-});
-*/
 // Esperar al evento 'shown.bs.modal' para agregar el evento
 $('#ModalForm').on('shown.bs.modal', function () {
     const registrar = document.getElementById('registrar-usuario');

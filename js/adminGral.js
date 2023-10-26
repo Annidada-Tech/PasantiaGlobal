@@ -136,7 +136,7 @@ btnGuardarCapacitacion.addEventListener('click', (e) => {
   document.getElementById('formulario-publicacion').value = '';
   }  
 });
-
+//Mostrar para eliminar los beneficios
 document.addEventListener('DOMContentLoaded', async (e) => {
   const tablaBeneficios = document.getElementById('tabla-beneficios');
   const beneficios = await obtenerRegistrosBeneficios();
@@ -173,60 +173,47 @@ document.addEventListener('DOMContentLoaded', async (e) => {
     });
   });
 });
-
-
-
-
 /*
-//Mostrando contenido de Beneficios en la tabla de la pagina de administrador automaticamente
-
+//Mostrar para eliminar las novedades
 document.addEventListener('DOMContentLoaded', async (e) => {
-  const tablapublicaciones = document.getElementById('tabla-publicaciones');
-  const publicaciones = [];
-
-  const beneficios = await obtenerRegistrosBeneficios();
+  const tablaNovedades = document.getElementById('tabla-novedades');
   const novedades = await obtenerRegistrosNovedades();
-  const politicas = await obtenerRegistrosPoliticas();
-  const capacitaciones = await obtenerRegistrosCapacitaciones();
 
-  beneficios.forEach((doc) => {
-    publicaciones.push(doc.data());
-  });
   novedades.forEach((doc) => {
-    publicaciones.push(doc.data());
-  });
-  politicas.forEach((doc) => {
-    publicaciones.push(doc.data());
-  });
-  capacitaciones.forEach((doc) => {
-    publicaciones.push(doc.data());
-  });
-
-  publicaciones.sort((a, b) => b.timestamp - a.timestamp);
-
-  publicaciones.forEach((publicacion) => {
+    const novedades = doc.data();
     // Crear una instancia de Date usando el timestamp
-    const fecha = new Date(publicacion.timestamp.seconds * 1000); // Convierte segundos a milisegundos
-
+    const fecha = new Date(novedades.timestamp.seconds * 1000); // Convierte segundos a milisegundos
     const horaLocal = fecha.toLocaleString(); // Convierte la fecha en hora local
-
     const row = `
     <tr>
       <td>
-        <img src="${publicacion.imagen}" width="100">
+        <img src="${novedades.imagen}" width="100">
       </td>
-      <td>${publicacion.titulo}</td>
-      <td>${publicacion.categoria}</td>
+      <td>${novedades.titulo}</td>
+      <td>${novedades.categoria}</td>
       <td>${horaLocal}</td> <!-- Agregar la hora local en lugar del timestamp -->
       <td>
-        <button class="btn btn-danger btn-sm btn-eliminar" data-id="${publicacion.timestamp}">Eliminar</button>
+        <button class="btn btn-danger btn-sm btn-eliminar" data-id="${doc.id}">Eliminar</button>
       </td>
     </tr>
     `;
-    tablapublicaciones.innerHTML += row;
+    tablaNovedades.innerHTML += row;
+  });
+
+  const botonesEliminar = document.querySelectorAll('.btn-eliminar');
+  botonesEliminar.forEach((boton) => {
+    boton.addEventListener('click', async (e) => {
+      const id = e.target.getAttribute('data-id');
+      const idComoString = id.toString(); // Convierte el Timestamp a cadena
+      await eliminarRegistroBeneficios(idComoString); // Llama a la función con el ID como cadena
+      // Realiza cualquier otra acción necesaria después de eliminar el registro
+      location.reload();
+    });
   });
 });
+
 */
+
 
 
 
