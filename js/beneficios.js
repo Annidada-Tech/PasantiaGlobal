@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', async function() {
         querySnapshot.forEach((doc) => {
             beneficios.push(doc.data());
         });
-
+        
         // Ordena los beneficios por timestamp de forma descendente
         beneficios.sort((a, b) => b.timestamp - a.timestamp);
 
