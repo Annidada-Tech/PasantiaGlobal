@@ -167,13 +167,27 @@
                         <textarea id="formulario-publicacion" required></textarea>
                       </div>
                   </form>
-                    <div class="box-sub d-flex justify-content-center">
-                    <!-- <button type="submit" class="btn btn-warning" id="guardar-bd">Guardar</button> -->
-                    </div>
+                    
                       <h4 class="d-flex justify-content-center mt-2">Publicar Capacitación</h4>
                     <div class="box-sub d-flex justify-content-center">
                       <button type="submit" class="btn btn-outline-primary" id="publicar-capacitaciones-editor">Capacitaciones</button>
                     </div>
+                    <div class="container py-3">
+                      <h4 class="d-flex justify-content-center mt-2">Borrar Publicaciones</h4>
+                      <table class="table table-dark ">
+                        <thead>
+                          <tr>
+                            <th>Portada</th>
+                            <th>Titulo</th>
+                            <th>Categoria</th>
+                            <th>Fecha y hora </th>
+                            <th>Eliminar</th>
+                          </tr>
+                        </thead>
+                        <tbody class="table-dark table-striped" id="tabla-capacitaciones">
+                        </tbody>
+                      </table>
+                    </div>     
                 </div>
               </div>
             </div>
