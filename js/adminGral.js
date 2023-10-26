@@ -1,21 +1,14 @@
 import { crearRegistroBeneficios,
          crearRegistroNovedades,
          crearRegistroPoliticas,
-         crearRegistroCapacitacion} from './firebase.js';
+         crearRegistroCapacitacion,
+         obtenerRegistrosBeneficios,
+         obtenerRegistrosNovedades,
+         obtenerRegistrosPoliticas,
+         obtenerRegistrosCapacitaciones,  
+         eliminarRegistroBeneficios,     
+        } from './firebase.js';
 import { alerta } from './alerta.js';
-/**
- * PAGINA WEB ADMINISTRADOR GENERAL:
- * En esta pagina se pretende que el administrador general pueda:
- * 1. Crear nuevos administradores secundarios
- * 2. Crear nuevos administradores de capacitaciones
- * 3. Puede ingresar al editor de contenido con acceso general para:
- *      3.1. Crear nuevas noticias
- *      3.2. Crear nuevos eventos
- *      3.3. Crear nuevas capacitaciones
- *      3.4. Crear nuevos beneficios
- *      3.5. Crear nuevos poloíticas
- *      3.6. Crear nuevos novedades
- */
 
 const botonPaginaEditor = document.getElementById('editor-page');
 botonPaginaEditor.addEventListener('click', () => {
@@ -44,9 +37,6 @@ btnGuardarBeneficios.addEventListener('click', (e) => {
     
     return alerta("Por favor, complete todos los campos", "danger");
   }else{
-    
-    //posible switch para las categorias
-    
   // Llamar a la función para guardar el registro en Firebase
   crearRegistroBeneficios(titulo, resumen, categoria, contenido, imagen);
   alert("Se ha guardado correctamente")
@@ -56,9 +46,7 @@ btnGuardarBeneficios.addEventListener('click', (e) => {
   document.getElementById('resumen-publicacion').value = '';
   document.getElementById('categoria-publicacion').value = '';
   document.getElementById('formulario-publicacion').value = '';
-  
   }  
-  
 });
 
 //Guardando contenido de Novedades en la base de datos----------------------
@@ -78,9 +66,6 @@ btnGuardarNovedades.addEventListener('click', (e) => {
     
     return alerta("Por favor, complete todos los campos", "danger");
   }else{
-    
-    //posible switch para las categorias
-    
   // Llamar a la función para guardar el registro en Firebase
   crearRegistroNovedades(titulo, resumen, categoria, contenido, imagen);
   alert("Se ha guardado correctamente")
@@ -111,9 +96,6 @@ btnGuardarPoliticas.addEventListener('click', (e) => {
     
     return alerta("Por favor, complete todos los campos", "danger");
   }else{
-    
-    //posible switch para las categorias
-    
   // Llamar a la función para guardar el registro en Firebase
   crearRegistroPoliticas(titulo, resumen, categoria, contenido, imagen);
   alert("Se ha guardado correctamente")
@@ -143,9 +125,6 @@ btnGuardarCapacitacion.addEventListener('click', (e) => {
     
     return alerta("Por favor, complete todos los campos", "danger");
   }else{
-    
-    //posible switch para las categorias
-    
   // Llamar a la función para guardar el registro en Firebase
   crearRegistroCapacitacion(titulo, resumen, categoria, contenido, imagen);
   alert("Se ha guardado correctamente")
@@ -157,4 +136,98 @@ btnGuardarCapacitacion.addEventListener('click', (e) => {
   document.getElementById('formulario-publicacion').value = '';
   }  
 });
+
+document.addEventListener('DOMContentLoaded', async (e) => {
+  const tablaBeneficios = document.getElementById('tabla-beneficios');
+  const beneficios = await obtenerRegistrosBeneficios();
+
+  beneficios.forEach((doc) => {
+    const beneficio = doc.data();
+    // Crear una instancia de Date usando el timestamp
+    const fecha = new Date(beneficio.timestamp.seconds * 1000); // Convierte segundos a milisegundos
+    const horaLocal = fecha.toLocaleString(); // Convierte la fecha en hora local
+    const row = `
+    <tr>
+      <td>
+        <img src="${beneficio.imagen}" width="100">
+      </td>
+      <td>${beneficio.titulo}</td>
+      <td>${beneficio.categoria}</td>
+      <td>${horaLocal}</td> <!-- Agregar la hora local en lugar del timestamp -->
+      <td>
+        <button class="btn btn-danger btn-sm btn-eliminar" data-id="${doc.id}">Eliminar</button>
+      </td>
+    </tr>
+    `;
+    tablaBeneficios.innerHTML += row;
+  });
+
+  const botonesEliminar = document.querySelectorAll('.btn-eliminar');
+  botonesEliminar.forEach((boton) => {
+    boton.addEventListener('click', async (e) => {
+      const id = e.target.getAttribute('data-id');
+      const idComoString = id.toString(); // Convierte el Timestamp a cadena
+      await eliminarRegistroBeneficios(idComoString); // Llama a la función con el ID como cadena
+      // Realiza cualquier otra acción necesaria después de eliminar el registro
+      location.reload();
+    });
+  });
+});
+
+
+
+
+/*
+//Mostrando contenido de Beneficios en la tabla de la pagina de administrador automaticamente
+
+document.addEventListener('DOMContentLoaded', async (e) => {
+  const tablapublicaciones = document.getElementById('tabla-publicaciones');
+  const publicaciones = [];
+
+  const beneficios = await obtenerRegistrosBeneficios();
+  const novedades = await obtenerRegistrosNovedades();
+  const politicas = await obtenerRegistrosPoliticas();
+  const capacitaciones = await obtenerRegistrosCapacitaciones();
+
+  beneficios.forEach((doc) => {
+    publicaciones.push(doc.data());
+  });
+  novedades.forEach((doc) => {
+    publicaciones.push(doc.data());
+  });
+  politicas.forEach((doc) => {
+    publicaciones.push(doc.data());
+  });
+  capacitaciones.forEach((doc) => {
+    publicaciones.push(doc.data());
+  });
+
+  publicaciones.sort((a, b) => b.timestamp - a.timestamp);
+
+  publicaciones.forEach((publicacion) => {
+    // Crear una instancia de Date usando el timestamp
+    const fecha = new Date(publicacion.timestamp.seconds * 1000); // Convierte segundos a milisegundos
+
+    const horaLocal = fecha.toLocaleString(); // Convierte la fecha en hora local
+
+    const row = `
+    <tr>
+      <td>
+        <img src="${publicacion.imagen}" width="100">
+      </td>
+      <td>${publicacion.titulo}</td>
+      <td>${publicacion.categoria}</td>
+      <td>${horaLocal}</td> <!-- Agregar la hora local en lugar del timestamp -->
+      <td>
+        <button class="btn btn-danger btn-sm btn-eliminar" data-id="${publicacion.timestamp}">Eliminar</button>
+      </td>
+    </tr>
+    `;
+    tablapublicaciones.innerHTML += row;
+  });
+});
+*/
+
+
+
 

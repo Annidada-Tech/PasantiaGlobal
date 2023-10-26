@@ -1,7 +1,13 @@
 
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-app.js";
-import { getFirestore, collection, addDoc, getDocs  } from "https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js";
+import { getFirestore,
+     collection,
+     addDoc,
+     getDocs,
+     deleteDoc,
+     doc,
+} from "https://www.gstatic.com/firebasejs/10.5.0/firebase-firestore.js";
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -124,3 +130,14 @@ export const crearRegistroCapacitacion = async (titulo, resumen, categoria, cont
 }
 //funcion que obtiene los registros de capacitaciones
 export const obtenerRegistrosCapacitaciones = () => getDocs(collection(db, "capacitaciones"));
+
+//FUNCION QUE ELIMINA UN REGISTRO DE LA BASE DE DATOS por id 
+export const eliminarRegistroBeneficios = async (id) => {
+    console.log("id a eliminar: ", id);
+    try {
+        await deleteDoc(doc(db, "beneficios", id));
+        console.log("Registro eliminado correctamente");
+    } catch (error) {
+        console.error("Error al eliminar el registro: ", error);
+    }
+}

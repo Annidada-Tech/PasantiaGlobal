@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <a href="/view/beneficios.html">
-                                    <button type="button" class="btn btn-sm btn-outline-primary">Ver Página de Beneficios</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary btn-light">Ver Página de Beneficios</button>
                                 </a>
                             </div>
                         </div>
@@ -83,7 +83,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <a href="/view/beneficios.html">
-                                    <button type="button" class="btn btn-sm btn-outline-primary">Ver Página de Beneficios</button>
+                                    <button type="button" class="btn btn-sm btn-outline-secondary btn-light">Ver Página de Beneficios</button>
                                 </a>
                             </div>
                         </div>
@@ -94,7 +94,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             seccionNovedadesIndex.innerHTML = cardHtml;
         });
     } catch (error) {
-        console.error("Error al obtener registros de beneficios: ", error);
+        console.error("Error al obtener registros de novedades: ", error);
     }
 });
 
@@ -126,8 +126,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
                                 <a href="/view/beneficios.html">
-                                <button type="button" class="btn btn-sm btn-outline-primary">Ver Pagina Políticas</button></a>
-                                  <!--<button type="button" class="btn btn-sm btn-outline-secondary">Edit</button>-->
+                                <button type="button" class="btn btn-sm btn-outline-secondary btn-light">Ver Pagina Políticas</button></a>
                             </div>
                         </div>
                     </div>
@@ -137,7 +136,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             seccionPoliticasIndex.innerHTML = cardHtml;
         });
     } catch (error) {
-        console.error("Error al obtener registros de beneficios: ", error);
+        console.error("Error al obtener registros de politicas: ", error);
     }
 });
 
@@ -170,7 +169,6 @@ document.addEventListener('DOMContentLoaded', async function() {
                             <div class="btn-group">
                                 <a href="/view/beneficios.html">
                                 <button type="button" class="btn btn-sm btn-outline-secondary btn-light">Ver Pagina Capacitaciones</button></a>
-                                  <!--<button type="button" class="btn btn-sm btn-outline-secondary btn-light">Edit</button>-->
                             </div>
                         </div>
                     </div>
@@ -180,7 +178,7 @@ document.addEventListener('DOMContentLoaded', async function() {
             seccionCapacitacionesIndex.innerHTML = cardHtml;
         });
     } catch (error) {
-        console.error("Error al obtener registros de beneficios: ", error);
+        console.error("Error al obtener registros de capacitaciones: ", error);
     }
 });
 
