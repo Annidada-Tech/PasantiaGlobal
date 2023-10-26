@@ -6,7 +6,10 @@ import { crearRegistroBeneficios,
          obtenerRegistrosNovedades,
          obtenerRegistrosPoliticas,
          obtenerRegistrosCapacitaciones,  
-         eliminarRegistroBeneficios,     
+         eliminarRegistroBeneficios,
+         eliminarRegistroNovedades,
+         eliminarRegistroPoliticas,
+         eliminarRegistroCapacitaciones,     
         } from './firebase.js';
 import { alerta } from './alerta.js';
 
@@ -136,6 +139,7 @@ btnGuardarCapacitacion.addEventListener('click', (e) => {
   document.getElementById('formulario-publicacion').value = '';
   }  
 });
+/*
 //Mostrar para eliminar los beneficios
 document.addEventListener('DOMContentLoaded', async (e) => {
   const tablaBeneficios = document.getElementById('tabla-beneficios');
@@ -173,7 +177,7 @@ document.addEventListener('DOMContentLoaded', async (e) => {
     });
   });
 });
-/*
+*/
 //Mostrar para eliminar las novedades
 document.addEventListener('DOMContentLoaded', async (e) => {
   const tablaNovedades = document.getElementById('tabla-novedades');
@@ -205,14 +209,89 @@ document.addEventListener('DOMContentLoaded', async (e) => {
     boton.addEventListener('click', async (e) => {
       const id = e.target.getAttribute('data-id');
       const idComoString = id.toString(); // Convierte el Timestamp a cadena
-      await eliminarRegistroBeneficios(idComoString); // Llama a la función con el ID como cadena
+      await eliminarRegistroNovedades(idComoString); // Llama a la función con el ID como cadena
       // Realiza cualquier otra acción necesaria después de eliminar el registro
       location.reload();
     });
   });
 });
 
-*/
+//Mostrar para eliminar las politicas
+document.addEventListener('DOMContentLoaded', async (e) => {
+  const tablaPoliticas = document.getElementById('tabla-politicas');
+  const politicas = await obtenerRegistrosPoliticas();
+
+  politicas.forEach((doc) => {
+    const politicas = doc.data();
+    // Crear una instancia de Date usando el timestamp
+    const fecha = new Date(politicas.timestamp.seconds * 1000); // Convierte segundos a milisegundos
+    const horaLocal = fecha.toLocaleString(); // Convierte la fecha en hora local
+    const row = `
+    <tr>
+      <td>
+        <img src="${politicas.imagen}" width="100">
+      </td>
+      <td>${politicas.titulo}</td>
+      <td>${politicas.categoria}</td>
+      <td>${horaLocal}</td> <!-- Agregar la hora local en lugar del timestamp -->
+      <td>
+        <button class="btn btn-danger btn-sm btn-eliminar" data-id="${doc.id}">Eliminar</button>
+      </td>
+    </tr>
+    `;
+    tablaPoliticas.innerHTML += row;
+  });
+
+  const botonesEliminar = document.querySelectorAll('.btn-eliminar');
+  botonesEliminar.forEach((boton) => {
+    boton.addEventListener('click', async (e) => {
+      const id = e.target.getAttribute('data-id');
+      const idComoString = id.toString(); // Convierte el Timestamp a cadena
+      await eliminarRegistroPoliticas(idComoString); // Llama a la función con el ID como cadena
+      // Realiza cualquier otra acción necesaria después de eliminar el registro
+      location.reload();
+    });
+  });
+});
+
+//Mostrar para eliminar las novedades
+document.addEventListener('DOMContentLoaded', async (e) => {
+  const tablaCapacitaciones = document.getElementById('tabla-capacitaciones');
+  const capacitaciones = await obtenerRegistrosCapacitaciones();
+
+  capacitaciones.forEach((doc) => {
+    const capacitaciones = doc.data();
+    // Crear una instancia de Date usando el timestamp
+    const fecha = new Date(capacitaciones.timestamp.seconds * 1000); // Convierte segundos a milisegundos
+    const horaLocal = fecha.toLocaleString(); // Convierte la fecha en hora local
+    const row = `
+    <tr>
+      <td>
+        <img src="${capacitaciones.imagen}" width="100">
+      </td>
+      <td>${capacitaciones.titulo}</td>
+      <td>${capacitaciones.categoria}</td>
+      <td>${horaLocal}</td> <!-- Agregar la hora local en lugar del timestamp -->
+      <td>
+        <button class="btn btn-danger btn-sm btn-eliminar" data-id="${doc.id}">Eliminar</button>
+      </td>
+    </tr>
+    `;
+    tablaCapacitaciones.innerHTML += row;
+  });
+
+  const botonesEliminar = document.querySelectorAll('.btn-eliminar');
+  botonesEliminar.forEach((boton) => {
+    boton.addEventListener('click', async (e) => {
+      const id = e.target.getAttribute('data-id');
+      const idComoString = id.toString(); // Convierte el Timestamp a cadena
+      await eliminarRegistroCapacitaciones(idComoString); // Llama a la función con el ID como cadena
+      // Realiza cualquier otra acción necesaria después de eliminar el registro
+      location.reload();
+    });
+  });
+});
+
 
 
 
