@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                     </div>
                 </div>
             `;
-            seccionBeneficios.innerHTML += cardHtml;
+            seccionBeneficios.innerHTML += cardHtml;    
         });
     } catch (error) {
         console.error("Error al obtener registros de beneficios: ", error);
