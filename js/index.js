@@ -201,3 +201,43 @@ $('#ModalForm').on('shown.bs.modal', function () {
         alerta('Usuario registrado correctamente');
     });
 });
+
+
+/*
+document.addEventListener('DOMContentLoaded', async function() {
+    // Fecha futura (3 meses a partir de la fecha actual)
+    var fechaF = new Date();
+    var horasFSumar = 0;
+    var minutosFSumar = 0;
+    var segundosFSumar = 10;
+    // suma horas, minutos y segundos a la fecha actual
+    fechaF.setHours(fechaF.getHours() + horasFSumar);
+    fechaF.setMinutes(fechaF.getMinutes() + minutosFSumar);
+    fechaF.setSeconds(fechaF.getSeconds() + segundosFSumar);
+    
+    
+    // Fecha actual
+    var fechaA = new Date();
+    
+    // Sumar horas, minutos y segundos a la fecha actual
+    var horasASumar = 0;
+    var minutosASumar = 2;
+    var segundosASumar = 0;
+    
+    fechaA.setHours(fechaA.getHours() + horasASumar);
+    fechaA.setMinutes(fechaA.getMinutes() + minutosASumar);
+    fechaA.setSeconds(fechaA.getSeconds() + segundosASumar);
+    
+    console.log("Fecha futura:", fechaF.toLocaleString());
+    console.log("Fecha actual:", fechaA.toLocaleString());
+    
+    // Comprueba si la fecha actual es mayor o igual que la fecha futura
+    if (fechaA >= fechaF) {
+        // Si la fecha futura se ha alcanzado o superado, borra el contenido
+        var contenido = document.getElementById("contenido");
+        contenido.innerHTML = "<p>La aplicación web ha expirado.</p>";
+    }
+    });
+  */
+  
+  

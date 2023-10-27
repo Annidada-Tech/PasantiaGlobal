@@ -23,11 +23,11 @@ document.addEventListener('DOMContentLoaded', async function() {
                 <div class="card shadow-sm">
                     <!-- IMAGEN DESDE LA BASE DE DATOS -->
                     <img src="${novedades.imagen}" class="card-img-top" alt=${novedades.titulo}>
-                    <div class="card-body">
+                    <div class="">
                         <!-- TITULO DESDE LA BASE DE DATOS -->
                         <h1 class="d-flex justify-content-center">${novedades.titulo}</h1>
                         <!-- CONTENIDO DESDE LA BASE DE DATOS -->
-                        <p class="card-text">${novedades.contenido}</p>
+                        <p class="">${novedades.contenido}</p>
                         <!-- CATEGORIA DESDE LA BASE DE DATOS -->
                         <div class="me-gusta d-flex justify-content-end" id="btn-megusta">
                             <small></small>

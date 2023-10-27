@@ -23,11 +23,11 @@ document.addEventListener('DOMContentLoaded', async function() {
                         <div class="card shadow-sm">
                             <!-- IMAGEN DESDE LA BASE DE DATOS -->
                             <img src="${beneficio.imagen}" class="card-img-top" alt=${beneficio.titulo}>
-                            <div class="card-body">
+                            <div class="">
                                 <!-- TITULO DESDE LA BASE DE DATOS -->
                                 <h1 class="d-flex justify-content-center">${beneficio.titulo}</h1>
                                 <!-- CONTENIDO DESDE LA BASE DE DATOS -->
-                                <p class="card-text">${beneficio.contenido}</p>
+                                <p class="">${beneficio.contenido}</p>
                                 <!-- CATEGORIA DESDE LA BASE DE DATOS -->
                                 <div class="me-gusta d-flex justify-content-end" id="btn-megusta">
                                     <small></small>
@@ -43,3 +43,4 @@ document.addEventListener('DOMContentLoaded', async function() {
         console.error("Error al obtener registros de beneficios: ", error);
     }
 });
+
