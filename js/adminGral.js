@@ -1,4 +1,5 @@
-import { crearRegistroBeneficios,
+import { crearRegistro,
+         crearRegistroBeneficios,
          crearRegistroNovedades,
          crearRegistroPoliticas,
          crearRegistroCapacitacion,
@@ -289,6 +290,26 @@ document.addEventListener('DOMContentLoaded', async (e) => {
       // Realiza cualquier otra acción necesaria después de eliminar el registro
       location.reload();
     });
+  });
+});
+
+
+// Esperar al evento 'shown.bs.modal' para agregar el evento
+$('#ModalForm').on('shown.bs.modal', function () {
+  const registrar = document.getElementById('registrar-usuario');
+  registrar.addEventListener('click', (e) => {
+      e.preventDefault();
+      const nombre = document.getElementById('nombre-user').value;
+      const apellido = document.getElementById('apellido-user').value;
+      const usuario = document.getElementById('usuario-user').value;
+      const password = document.getElementById('password-user').value;
+      const rol = document.getElementById('rol-user').value;
+
+      //console.log(nombre, apellido, usuario, password, rol);
+
+      crearRegistro(nombre, apellido, usuario, password, rol);
+      bootstrap.Modal.getInstance(document.getElementById('ModalForm')).hide();
+      alerta('Usuario registrado correctamente');
   });
 });
 

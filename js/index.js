@@ -167,7 +167,7 @@ document.addEventListener('DOMContentLoaded', async function() {
                 <textarea class="card-text">${capacitaciones.resumen}</textarea>
                         <div class="d-flex justify-content-between align-items-center">
                             <div class="btn-group">
-                                <a href="/view/capacitaciones.html">
+                                <a href="/view/capacitacion.html">
                                 <button type="button" class="btn btn-sm btn-outline-secondary btn-light">Ver Pagina Capacitaciones</button></a>
                             </div>
                         </div>
@@ -183,24 +183,6 @@ document.addEventListener('DOMContentLoaded', async function() {
 });
 
 
-// Esperar al evento 'shown.bs.modal' para agregar el evento
-$('#ModalForm').on('shown.bs.modal', function () {
-    const registrar = document.getElementById('registrar-usuario');
-    registrar.addEventListener('click', (e) => {
-        e.preventDefault();
-        const nombre = document.getElementById('nombre-user').value;
-        const apellido = document.getElementById('apellido-user').value;
-        const usuario = document.getElementById('usuario-user').value;
-        const password = document.getElementById('password-user').value;
-        const rol = document.getElementById('rol-user').value;
-
-        //console.log(nombre, apellido, usuario, password, rol);
-
-        crearRegistro(nombre, apellido, usuario, password, rol);
-        bootstrap.Modal.getInstance(document.getElementById('ModalForm')).hide();
-        alerta('Usuario registrado correctamente');
-    });
-});
 
 
 /*
